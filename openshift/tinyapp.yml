@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: tinyapp
-          image: 'quay.io/siamaksade/tinyapp:v2'
+          image: 'quay.io/siamaksade/tinyapp:v1'
           ports:
             - containerPort: 8080
               protocol: TCP

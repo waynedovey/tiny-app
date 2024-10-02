@@ -62,12 +62,20 @@ spec:
   selector:
     app: tinyapp
 ---
-apiVersion: v1
 kind: Route
+apiVersion: route.openshift.io/v1
 metadata:
+  name: tinyapp
+  namespace: tiny-app
   labels:
     app: tinyapp
-  name: tinyapp
+    app.kubernetes.io/part-of: tiny-app
+    apps.open-cluster-management.io/reconcile-rate: medium
 spec:
   to:
+    kind: Service
     name: tinyapp
+  tls: null
+  port:
+    targetPort: 8080
+  alternateBackends: []

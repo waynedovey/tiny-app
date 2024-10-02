@@ -2,14 +2,12 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: tinyapp
-  namespace: test
   labels:
     app: tinyapp
     app.kubernetes.io/component: tinyapp
     app.kubernetes.io/instance: tinyapp
     app.kubernetes.io/name: tinyapp
     app.kubernetes.io/part-of: tinyapp-app
-    app.openshift.io/runtime-namespace: test
 spec:
   replicas: 1
   selector:
